@@ -54,7 +54,7 @@ function concertThis(value) {
                 var datetime = response.data[i].datetime;
 
                 var concertResults =
-                    "-------------------------------------------" +
+                    "*#-------------------------------------------#*" +
                     "\nVenue Name: " + response.data[i].venue.name +
                     "\nVenue Location: " + response.data[i].venue.city +
                     "\nDate of the Event: " + moment(datetime, "MM-DD-YYYY");
@@ -80,7 +80,7 @@ function spotifyThis(value) {
         .then(function (response) {
             for (var i = 0; i < 10; i++) {
                 var spotifyReturn =
-                    "-------------------------------------------" +
+                    "*#-------------------------------------------#*" +
                     "\nArtist: " + response.tracks.items[i].artists[0].name +
                     "\nSong Name: " + response.tracks.items[i].name +
                     "\nAlbum Name: " + response.tracks.items[i].album.name +
@@ -104,7 +104,7 @@ function movieThis(value) {
     axios.get("https://www.omdbapi.com/?t=" + value + "&y=&plot=short&apikey=trilogy")
         .then(function (response) {
             var movieResults =
-                "--------------------------------------------------------------------" +
+                "*#-------------------------------------------#*" +
                 "\nMovie Title: " + response.data.Title +
                 "\nYear of Release: " + response.data.Year +
                 "\nIMDB Rating: " + response.data.imdbRating +
