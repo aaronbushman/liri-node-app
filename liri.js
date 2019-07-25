@@ -22,8 +22,8 @@ switch (command) {
     case "concert-this":
         concertThis(value);
         break;
-    case "spotify-this-song":
-        spotifySong(value);
+    case "spotify-this":
+        spotifyThis(value);
         break;
     case "movie-this":
         movieThis(value);
@@ -40,7 +40,7 @@ function doThis() {
             return console.log(error);
         }
         var dataRead = data.split(',');
-        spotifySong(dataRead[0], dataRead[1]);
+        spotifyThis(dataRead[0], dataRead[1]);
     })
 };
 
