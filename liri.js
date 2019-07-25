@@ -37,25 +37,25 @@ switch (command) {
 function concertThis(value) {
     axios.get("https://rest.bandsintown.com/artists/" + value + "/events?app_id=codingbootcamp")
         .then(function (response) {
+            console.log(response);
             for (var i = 0; i < response.data.length; i++) {
 
-                var datetime = response.data[i].datetime; //Saves datetime response into a variable
-                // var dateArr = datetime.split('T'); 
+                var datetime = response.data[i].datetime;
 
                 var concertResults =
-                    "--------------------------------------------------------------------" +
+                    "-------------------------------------------" +
                     "\nVenue Name: " + response.data[i].venue.name +
                     "\nVenue Location: " + response.data[i].venue.city +
-                    "\nDate of the Event: " + moment(datetime[0], "MM-DD-YYYY"); //dateArr[0]
+                    "\nDate of the Event: " + moment(datetime, "MM-DD-YYYY"); 
                 console.log(concertResults);
             }
         })
         .catch(function (error) {
             console.log(error);
         });
-    };
-
-    concertThis();
+};
+// value = "rolling stones";
+// concertThis(value);
 
 //spotify this api call function utilizing node-spotify
     function spotifyThis(value) {
@@ -67,7 +67,7 @@ function concertThis(value) {
         .then(function(response) {
             for (var i = 0; i < 10; i++) {
                 var spotifyReturn = 
-                    "--------------------------------------------------------------------" +
+                    "-------------------------------------------" +
                         "\nArtist: " + response.tracks.items[i].artists[0].name + 
                         "\nSong Name: " + response.tracks.items[i].name +
                         "\nAlbum Name: " + response.tracks.items[i].album.name +
@@ -80,3 +80,4 @@ function concertThis(value) {
         });
     };
 
+// spotifyThis();
