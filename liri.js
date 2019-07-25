@@ -9,6 +9,7 @@ moment().format();
 var keys = require("./keys.js");
 console.log(keys);
 
+//add keys to node-spot api call function
 var Spotify = require('node-spotify-api');
 var spotify = new Spotify(keys.spotify);
 
@@ -43,6 +44,8 @@ function doThis() {
         spotifyThis(dataRead[0], dataRead[1]);
     })
 };
+//for testing
+//doThis();
 
 //concert search api call function using axios
 function concertThis(value) {
