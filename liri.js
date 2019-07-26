@@ -60,7 +60,7 @@ function concertThis(value) {
                     "*#-------------------------------------------#*" +
                     "\nVenue Name: " + response.data[i].venue.name +
                     "\nVenue Location: " + response.data[i].venue.city +
-                    "\nDate of the Event: " + moment(datetime, "MM-DD-YYYY");
+                    "\nDate of the Event: " + moment(datetime).format("dddd, MMMM Do YYYY, h:mm:ss a");
                 console.log(concertResults);
             }
         })
